@@ -7,9 +7,20 @@ import bcrypt from "bcryptjs";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
     callbacks: {
-        async jwt({token}) {
-            console.log('TOKEN:::: ', token);
-            return token;
+        async session({token, session}) {
+
+            if(token.sub && session.user) {
+                session.user.id = token.sub;
+            }
+
+            console.log(
+                "Session callback called with token:",
+                token,
+                "session:",
+                session
+            )
+
+            return session;
         }
     },
     adapter: PrismaAdapter(prisma),

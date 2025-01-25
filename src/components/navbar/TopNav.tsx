@@ -6,7 +6,7 @@ import NavLink from "@/components/navbar/NavLink";
 
 export default function TopNav() {
     return (
-        <Navbar maxWidth='xl' className='bg-gradient-to-r from-purple-400 to-purple-700'
+        <Navbar maxWidth='xl' className='bg-gradient-to-r from-blue-400 to-blue-700'
             classNames={{
                 item: ['text-xl', 'text-white', 'uppercase', 'data-[active=true]:text-yellow-300'],
             }}>

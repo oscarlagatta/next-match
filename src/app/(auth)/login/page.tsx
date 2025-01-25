@@ -1,7 +1,11 @@
+import LoginForm from "@/app/(auth)/login/LoginForm";
 
 export default function LoginPage() {
     return (
-        <div>LoginPage</div>
+        <div
+            className='flex justify-center items-center vertical-center'>
+            <LoginForm />
+        </div>
     );
 }
 

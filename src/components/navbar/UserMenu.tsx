@@ -25,10 +25,10 @@ export default function UserMenu({user}: Props) {
                 />
             </DropdownTrigger>
             <DropdownMenu
-                variant='flat'
+                variant='faded'
                 aria-label='User actions menu'
             >
-                <DropdownSection showDivider>
+                <DropdownSection >
                     <DropdownItem
                         key='user-name'
                         as='span'
@@ -37,7 +37,7 @@ export default function UserMenu({user}: Props) {
                     >
                         Signed in as {user?.name}
                     </DropdownItem>
-                    <DropdownItem
+                    <DropdownItem showDivider
                         key='edit-profile'
                         as={Link}
                         href='/members/edit'

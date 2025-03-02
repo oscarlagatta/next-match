@@ -29,7 +29,6 @@ function RegisterForm(): JSX.Element {
         if (results.status === 'success') {
             console.log('user registered successfully');
         } else {
-
             if (Array.isArray(results.error)) {
                 results.error.forEach((e) => {
                     const fieldName = e.path.join('.') as 'email' | 'password' | 'name';
@@ -41,7 +40,6 @@ function RegisterForm(): JSX.Element {
                 setError('root.serverError', {message: results.error})
             }
         }
-
     }
 
     return (

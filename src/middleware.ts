@@ -24,6 +24,8 @@ export default auth((req) => {
     if(!isPublic && !isLoggedIn) {
         return NextResponse.redirect(new URL('/login', req.nextUrl));
     }
+
+    return NextResponse.next();
 })
 
 export const config = {

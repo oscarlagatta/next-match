@@ -7,8 +7,8 @@ import bcrypt from 'bcryptjs';
 import {ActionResult} from "@/types";
 import {User} from "@prisma/client";
 import {LoginSchema} from "@/lib/schemas/loginSchema";
-import {signIn, signOut} from "@/auth";
 import {AuthError} from "next-auth";
+import {signIn, signOut} from "@/auth";
 
 export async function signInUser(data: LoginSchema): Promise<ActionResult<string>> {
     console.log('Sign in user');
@@ -18,6 +18,7 @@ export async function signInUser(data: LoginSchema): Promise<ActionResult<string
             password: data.password,
             redirect: false,
         });
+
         console.log('RESULT::: ', result);
 
         return {
@@ -36,7 +37,7 @@ export async function signInUser(data: LoginSchema): Promise<ActionResult<string
         } else {
             return {
                 status: 'error',
-                error: 'Something went else wrong'
+                error: 'Something else went wrong'
             }
         }
     }
@@ -90,7 +91,7 @@ export async function registerUser(data: RegisterSchema): Promise<ActionResult<U
     }
 }
 
-export async function getUserByEmail(email: string){
+export async function getUserByEmail(email: string) {
     return prisma.user.findUnique({
         where: {
             email

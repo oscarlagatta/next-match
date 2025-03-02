@@ -10,8 +10,7 @@ import {JSX} from "react";
  */
 export default function RegisterPage(): JSX.Element {
     return (
-        <div
-            className='flex justify-center items-center vertical-center'>
+        <div className='flex justify-center items-center vertical-center'>
             <RegisterForm/>
         </div>
     );

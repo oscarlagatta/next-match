@@ -9,10 +9,8 @@ import UserMenu from "@/components/navbar/UserMenu";
 export default async function TopNav() {
     const session = await auth();
 
-
-
     return (
-        <Navbar maxWidth='xl' className='bg-gradient-to-r from-blue-400 to-blue-700'
+        <Navbar maxWidth='xl' className='bg-gradient-to-r from-purple-400 to-purple-700'
             classNames={{
                 item: ['text-xl', 'text-white', 'uppercase', 'data-[active=true]:text-yellow-300'],
             }}>
@@ -24,9 +22,9 @@ export default async function TopNav() {
                 </div>
             </NavbarBrand>
             <NavbarContent justify='center'>
-                    <NavLink href='/members' label='Matches'/>
-                    <NavLink href='/lists' label='Lists'/>
-                    <NavLink href='/messages' label='Messages'/>
+                <NavLink href='/members' label='Matches'/>
+                <NavLink href='/lists' label='Lists'/>
+                <NavLink href='/messages' label='Messages'/>
             </NavbarContent>
             <NavbarContent justify='end'>
                 {session?.user ? (

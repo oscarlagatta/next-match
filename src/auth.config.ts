@@ -1,5 +1,5 @@
 import {NextAuthConfig} from "next-auth";
-import Credentials from "@auth/core/providers/credentials";
+import Credentials from "next-auth/providers/credentials"; // "@auth/core/providers/credentials";
 import {loginSchema} from "@/lib/schemas/loginSchema";
 import {getUserByEmail} from "@/app/actions/authActions";
 import {compare} from "bcryptjs";
@@ -14,9 +14,7 @@ export default {
                 const {email, password} = validated.data;
                 const user = await getUserByEmail(email);
 
-                if (!user || !(await compare(password, user.passwordHash))) {
-                    return null;
-                }
+                if (!user || !(await compare(password, user.passwordHash))) return null;
 
                 return user;
             }

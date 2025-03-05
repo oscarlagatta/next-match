@@ -20,6 +20,7 @@
     "@hookform/resolvers": "^3.10.0",
     "@prisma/client": "^6.2.1",
     "bcryptjs": "^2.4.3",
+    "date-fns": "^4.1.0",
     "framer-motion": "^12.0.5",
     "next": "15.1.6",
     "next-auth": "^5.0.0-beta.25",
@@ -40,8 +41,12 @@
     "eslint-config-next": "15.1.6",
     "postcss": "^8",
     "prettier": "^3.4.2",
-    "prisma": "^6.2.1",
+    "prisma": "^6.4.1",
     "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   }
 }
